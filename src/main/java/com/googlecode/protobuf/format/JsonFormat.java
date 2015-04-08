@@ -203,7 +203,7 @@ public class JsonFormat extends AbstractCharBasedFormatter {
                 if(IDUtil.isValidID(byteString)){
                     generator.print(IDUtil.bytes2HexString(byteString.toByteArray()));
                 }else{
-                    generator.print(bytesToHexString((ByteString) value));
+                    generator.print(escapeBytes((ByteString) value));
                 }
                 generator.print("\"");
                 break;
